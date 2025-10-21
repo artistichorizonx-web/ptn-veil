@@ -1,6 +1,4 @@
-# PTN secrets
 .ptn/
 *.env
 **/*.env
-# System
 .DS_Store
