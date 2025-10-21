@@ -1,0 +1,27 @@
+{
+  "wave": {
+    "sent": 25,
+    "dry": 0,
+    "fail": 0,
+    "total": 25,
+    "file": "hotels_wave3_20251020-231308.csv"
+  },
+  "fu": {
+    "sent": 23,
+    "dry": 0,
+    "fail": 0,
+    "total": 23,
+    "file": "hotels_followup_20251020-233225.csv"
+  },
+  "close": {
+    "sent": 30,
+    "dry": 0,
+    "fail": 0,
+    "total": 30,
+    "file": "wave_close_20251020-233922.csv"
+  },
+  "summary": {
+    "sent": 78,
+    "total": 78
+  }
+}

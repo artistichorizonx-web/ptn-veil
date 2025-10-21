@@ -1,0 +1,12 @@
+# gizli / ağır şeyler
+.env
+config/**
+ops/**
+mail/**
+run/**
+**/*.csv
+**/*.eml
+**/*.log
+**/.DS_Store
+.venv/
+__pycache__/

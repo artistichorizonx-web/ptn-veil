@@ -1,0 +1,77 @@
+<!doctype html><meta charset="utf-8">
+<title>PTN • Speed & Security Boost — Remote</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+:root{--bg:#0b1220;--card:#0e1630;--fg:#e6eeff;--sub:#9fb3ff;--acc:#22d3ee;--ok:#22c55e}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--fg);font:16px system-ui,-apple-system,Segoe UI,Roboto}
+main{max-width:980px;margin:0 auto;padding:24px}
+h1{font-size:28px;margin:0 0 12px} .muted{color:var(--sub)}
+.card{background:var(--card);border:1px solid #1f2b4a;border-radius:14px;padding:16px;margin:12px 0}
+.badge{display:inline-block;background:#0c2d35;color:#7ee3f1;border:1px solid #0ea5e9;border-radius:999px;padding:4px 10px;font-weight:700}
+.grid{display:grid;gap:12px}
+@media(min-width:800px){.grid{grid-template-columns:1fr 1fr}}
+button,a.btn{background:var(--acc);color:#06223a;border:0;border-radius:10px;padding:10px 14px;font-weight:800;cursor:pointer;text-decoration:none}
+small{color:var(--sub)}
+code{background:#0b1a31;color:#a6ffec;padding:2px 6px;border-radius:8px}
+table{width:100%;border-collapse:collapse} td,th{border-bottom:1px solid #1f2b4a;padding:8px;text-align:left}
+.kpi{display:flex;gap:16px;flex-wrap:wrap}
+.kpi div{background:#0b1a31;border:1px solid #203055;border-radius:12px;padding:10px 14px}
+</style>
+<main>
+  <div class="badge">Remote • No on-site • Money-back</div>
+  <h1>PTN Speed & Security Boost</h1>
+  <p class="muted">24–72 saat içinde: <b>Core Web Vitals</b>, <b>HTTPS/HSTS/CSP</b>, ufak SEO & GMB. Rapor (10 bulgu) + <b>3 hızlı düzeltme</b>. Tamamen uzaktan.</p>
+
+  <div class="kpi">
+    <div>✔ Önce/Sonra CWV ekranları</div>
+    <div>✔ Güvenlik başlıkları (HSTS/CSP)</div>
+    <div>✔ Görsel/JS temizlik</div>
+    <div>✔ “Para iadesi” garantisi</div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h3>How it works</h3>
+      <ol>
+        <li>URL’nizi gönderin (yanıta yazmanız yeterli).</li>
+        <li>Ücretsiz mini-audit (3 ekran • PDF özet).</li>
+        <li>Uygun görürseniz ödeme → 10 bulgu + 3 fix.</li>
+      </ol>
+      <a class="btn" id="cta" href="#">Request free 3-screen mini-audit</a><br>
+      <small>İlk yanıt mailine yalnızca “Evet, mini-audit” yazmanız yeterli.</small>
+    </div>
+    <div class="card">
+      <h3>Pricing</h3>
+      <table>
+        <tr><th>Paket</th><th>İçerik</th><th>Fiyat</th></tr>
+        <tr><td>Lightning Scan (24h)</td><td>10 bulgu + 3 fix • CWV+HTTPS</td><td>€99</td></tr>
+        <tr><td>72h Boost</td><td>Derin CWV, CSP, görsel/JS trim</td><td>€149</td></tr>
+      </table>
+      <small>Fatura / IBAN / USDC (Base) kabul edilir.</small>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Proof (sample case)</h3>
+    <table>
+      <tr><th>URL</th><th>Before</th><th>After</th><th>Notes</th></tr>
+      <tr>
+        <td><a href="#" onclick="return false">sample-site.com</a></td>
+        <td><img src="img/sample_before.png" alt="before" width="160"></td>
+        <td><img src="img/sample_after.png" alt="after" width="160"></td>
+        <td>Largest Contentful Paint -38%, CLS 0.18→0.03</td>
+      </tr>
+    </table>
+    <small>Gerçek projelerle güncellenecek—sizinkini de ekleyelim.</small>
+  </div>
+
+  <div class="card">
+    <h3>Guarantee</h3>
+    <p>Hedeflenen iyileşme görünmezse <b>tam iade</b>. Hiç soru yok.</p>
+  </div>
+
+  <p class="muted">PTN • Remote optimization • Contact: reply-to mail</p>
+</main>
+<script>
+document.getElementById('cta').href = (new URLSearchParams(location.search).get('pay')||'#');
+</script>

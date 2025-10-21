@@ -1,0 +1,18 @@
+<!doctype html><html lang=en><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1">
+<title>PTN Store</title>
+<style>body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:#0b1220;color:#e5e7eb;margin:0;padding:24px}
+main{max-width:860px;margin:0 auto} a.btn{display:inline-block;padding:10px 14px;border-radius:10px;background:#2563eb;color:#fff;text-decoration:none;margin:6px 8px 0 0}
+.card{background:#0f1830;border:1px solid #1e293b;border-radius:12px;padding:16px;margin:12px 0}</style>
+<main>
+<section class=card><h1>PTN</h1><p>Lightning Scan • archaeology zip • consult.</p>
+<a id=card class=btn href=# target=_blank rel=noopener style="display:none">Pay by card</a>
+<a class=btn href="./download/" target=_blank rel=noopener>Downloads</a>
+<a class=btn href="./help/console.html" target=_blank rel=noopener>Console helper</a>
+<a class=btn href="./offers.json" target=_blank rel=noopener>offers.json</a></section>
+<section class=card><pre id=info style="white-space:pre-wrap"></pre></section>
+</main>
+<script>
+const link=localStorage.getItem('PTN_STRIPE_LINK')||''; const btn=document.getElementById('card');
+if(link){ btn.href=link; btn.style.display='inline-block'; }
+fetch('./offers.json').then(r=>r.json()).then(j=>{document.getElementById('info').textContent=JSON.stringify(j,null,2)}).catch(()=>{});
+</script>

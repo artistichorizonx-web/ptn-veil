@@ -1,0 +1,33 @@
+<!doctype html><meta charset="utf-8">
+<title>PTN • Public Proof</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+:root{--bg:#0b1220;--card:#0e1630;--ink:#dbe6ff;--mut:#9fb3ff;--ok:#22d3ee;--warn:#ffd166;--bad:#ff6b6b;--line:#203055}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px system-ui}
+main{max-width:900px;margin:0 auto;padding:24px}.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:12px 0}
+.kpi{display:flex;gap:8px;align-items:baseline}.n{font-weight:800;font-size:26px}.ok{color:var(--ok)}.warn{color:var(--warn)}.bad{color:var(--bad)}
+.btn{display:inline-block;background:var(--ok);color:#002531;font-weight:800;padding:8px 12px;border-radius:10px;text-decoration:none}
+.row{display:flex;gap:10px;flex-wrap:wrap}.tag{border:1px solid var(--line);padding:2px 8px;border-radius:999px;color:var(--mut)}
+</style>
+<main>
+  <h1>PTN • Live Proof (safe)</h1>
+  <div class="card" id="sum">Loading…</div>
+  <div class="card"><b>CTAs</b><div class="row" style="margin-top:8px">
+    <a class="btn" href="/store.html">Open Store</a>
+  </div><small>Aggregated metrics only. No recipient data stored.</small></div>
+  <div class="card" id="boxes"></div>
+</main>
+<script>
+fetch('/kpi.json').then(r=>r.json()).then(d=>{
+  const s=d.summary||{sent:0,total:0};
+  document.getElementById('sum').innerHTML =
+    `<div class="kpi"><span class="n ok">${s.sent}</span> total SENT · <span class="n">${s.total}</span> rows</div>`;
+  const boxes=document.getElementById('boxes'); boxes.innerHTML='';
+  for (const [k,v] of Object.entries(d)) {
+    if (k==='summary') continue;
+    boxes.innerHTML += `<div class="kpi"><b style="width:130px">${k}</b>
+      <span class="n ok">${v.sent}</span> sent · <span class="n warn">${v.dry}</span> dry ·
+      <span class="n bad">${v.fail}</span> fail · <span class="n">${v.total}</span> total</div>`;
+  }
+}).catch(()=>{ document.getElementById('sum').textContent='No KPI yet'; });
+</script>
