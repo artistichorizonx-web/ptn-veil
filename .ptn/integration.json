@@ -1,0 +1,8 @@
+{
+  "repo": "ptn-veil",
+  "integrated": true,
+  "type": "web_site",
+  "entrypoints": ["site/"],
+  "role": "private_site",
+  "notes": "Veil site content."
+}
